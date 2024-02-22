@@ -1,12 +1,27 @@
 <?php
     require_once __DIR__.'/classes/Category.php';
     require_once __DIR__.'/classes/product.php';
+    require_once __DIR__.'/classes/toy.php';
+    require_once __DIR__.'/classes/PetBed.php';
+    require_once __DIR__.'/classes/Food.php';
+
+    
 
     $dogsCategori = new Category('🐶');
     $catsCategori = new Category('🐱');
 
     $prodotto = new Product(
         'Prodotto',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjcQzcpit0Rl9stqDWWF0SK4F7MCWuNjp6FA&usqp=CAU',
+        8.99,
+        30,
+        'product',
+        $dogsCategori
+    );
+
+    $fresbee = new Toy(
+        'Prodotto',
+        'plastica',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjcQzcpit0Rl9stqDWWF0SK4F7MCWuNjp6FA&usqp=CAU',
         8.99,
         30,
@@ -71,6 +86,31 @@
                                 </ul>
                                 <p>
                                     <?php echo $prodotto->description;  ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card">
+                            <img src="<?php echo $fresbee->image;  ?>" alt="" class="card-img-top">
+                            <div class="card-body">
+                                <h3>
+                                    <?php echo $fresbee->name;  ?>
+                                </h3>
+                                <ul>
+                                    <li>
+                                    <?php echo $fresbee->category->name;  ?>
+                                    </li>
+                                    <li>
+                                        € <?php echo $fresbee->price;  ?>
+                                    </li>
+                                    <li>
+                                        disponibilità : <?php echo $fresbee->quantity;  ?>
+                                    </li>
+
+                                </ul>
+                                <p>
+                                    <?php echo $fresbee->description;  ?>
                                 </p>
                             </div>
                         </div>
